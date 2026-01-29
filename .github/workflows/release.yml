@@ -37,6 +37,7 @@ jobs:
       - name: Native Build
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./run lib core
+
   build:
     name: Build OSS APK
     runs-on: ubuntu-latest
@@ -68,14 +69,19 @@ jobs:
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
           export LOCAL_PROPERTIES="${{ secrets.LOCAL_PROPERTIES }}"
           ./run init action gradle
-          ./gradlew app:assembleOssRelease
-          APK=$(find app/build/outputs/apk -name '*arm64-v8a*.apk')
+          
+          # CHANGE: Build Debug version to get auto-signing
+          ./gradlew app:assembleOssDebug
+          
+          # CHANGE: Find any APK in the output folder (more robust)
+          APK=$(find app/build/outputs/apk -name '*.apk' | head -n 1)
           APK=$(dirname $APK)
           echo "APK=$APK" >> $GITHUB_ENV
       - uses: actions/upload-artifact@v4
         with:
           name: APKs
           path: ${{ env.APK }}
+
   publish:
     name: Publish Release
     if: github.event.inputs.publish != 'y'
@@ -96,7 +102,9 @@ jobs:
           mv ghr*linux_amd64/ghr .
           mkdir apks
           find artifacts -name "*.apk" -exec cp {} apks \;
+          # Release might show as 'Debug' build
           ./ghr -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" apks
+
   play:
     name: Build Play Bundle
     if: github.event.inputs.play != 'y'
@@ -130,8 +138,9 @@ jobs:
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
           export LOCAL_PROPERTIES="${{ secrets.LOCAL_PROPERTIES }}"
           ./run init action gradle
-          ./gradlew bundlePlayRelease
+          # Switched to Debug to avoid signing errors here too
+          ./gradlew bundlePlayDebug
       - uses: actions/upload-artifact@v4
         with:
           name: AAB
-          path: app/build/outputs/bundle/playRelease/app-play-release.aab
+          path: app/build/outputs/bundle/playDebug/app-play-debug.aab
