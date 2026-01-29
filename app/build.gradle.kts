@@ -10,6 +10,16 @@ plugins {
 setupApp()
 
 android {
+    // ဒီ namespace ကို လုံးဝ မထိပါနဲ့ (Error တက်တတ်ပါတယ်)
+    namespace = "io.nekohasekai.sagernet"
+
+    // ********** ဒီနေရာမှာ ကိုယ်ပိုင် App ID ကို ပြောင်းထည့်ပါ **********
+    defaultConfig {
+        applicationId = "com.myname.vpn"  // <--- ဒီနေရာကို ပြင်ပါ
+        // version code တွေက setupApp() ထဲမှာ ရှိနိုင်ပါတယ်၊ ဒီမှာ မလိုပါဘူး
+    }
+    // ***************************************************************
+
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
@@ -27,7 +37,7 @@ android {
         viewBinding = true
         aidl = true
     }
-    namespace = "io.nekohasekai.sagernet"
+    
     packaging {
         jniLibs {
             useLegacyPackaging = true
