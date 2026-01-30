@@ -10,15 +10,13 @@ plugins {
 setupApp()
 
 android {
-    // ဒီ namespace ကို လုံးဝ မထိပါနဲ့ (Error တက်တတ်ပါတယ်)
+    // ဒီ namespace ကို လုံးဝ မထိပါနဲ့
     namespace = "io.nekohasekai.sagernet"
 
-    // ********** ဒီနေရာမှာ ကိုယ်ပိုင် App ID ကို ပြောင်းထည့်ပါ **********
+    // ********** App ID ပြောင်းပြီးသား **********
     defaultConfig {
-        applicationId = "com.lionbox.vpn"  // <--- ဒီနေရာကို ပြင်ပါ
-        // version code တွေက setupApp() ထဲမှာ ရှိနိုင်ပါတယ်၊ ဒီမှာ မလိုပါဘူး
+        applicationId = "com.lionbox.vpn"
     }
-    // ***************************************************************
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -37,7 +35,6 @@ android {
         viewBinding = true
         aidl = true
     }
-    
     packaging {
         jniLibs {
             useLegacyPackaging = true
@@ -46,6 +43,16 @@ android {
     androidResources {
         generateLocaleConfig = true
     }
+
+    // ********** APK နာမည်ပြောင်းရန် ကုဒ်အသစ် **********
+    // ဒီနေရာမှာ NekoBox ဆိုတဲ့ နာမည်ပါရင် LionBox နဲ့ အတင်းအစားထိုးခိုင်းထားပါတယ်
+    applicationVariants.all {
+        outputs.all {
+            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            output.outputFileName = output.outputFileName.replace("NekoBox", "LionBox")
+        }
+    }
+    // **************************************************
 }
 
 dependencies {
