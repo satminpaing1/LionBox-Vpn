@@ -220,10 +220,12 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                     }
                     val response = client.newRequest().apply {
                         if (checkPreview) {
-                            setURL("https://api.github.com/repos/MatsuriDayo/NekoBoxForAndroid/releases/tags/preview")
+                        // Preview အတွက် Link
+                        setURL("https://api.github.com/repos/satminpaing1/LionBox-Vpn/releases/tags/preview")
                         } else {
-                            setURL("https://api.github.com/repos/MatsuriDayo/NekoBoxForAndroid/releases/latest")
-                        }
+                        // Release အတွက် Link
+                       setURL("https://api.github.com/repos/satminpaing1/LionBox-Vpn/releases/latest")
+                    }
                     }.execute()
                     val release = JSONObject(Util.getStringBox(response.contentString))
                     val releaseName = release.getString("name")
