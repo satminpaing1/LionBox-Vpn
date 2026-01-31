@@ -13,12 +13,34 @@ android {
     // ဒီ namespace ကို လုံးဝ မထိပါနဲ့
     namespace = "io.nekohasekai.sagernet"
 
-    // ********** App ID ပြောင်းပြီးသား **********
     defaultConfig {
         applicationId = "com.lionbox.vpn"
         versionName = "3.0"
         versionCode = 3
     }
+
+    // ********** ဒီနေရာမှာ Signing Config ကို ထည့်ထားပါတယ် **********
+    signingConfigs {
+        create("release") {
+            storeFile = file("lionbox.jks") // app folder ထဲက jks ဖိုင်ကို ယူမယ်
+            storePassword = "Paing@007"
+            keyAlias = "lionbox-key"
+            keyPassword = "Paing@007"
+        }
+    }
+
+    buildTypes {
+        getByName("debug") {
+            // Debug build မှာလည်း ဒီ Key ကိုပဲ သုံးခိုင်းလိုက်တာဖြစ်ပါတယ်
+            signingConfig = signingConfigs.getByName("release")
+        }
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+    // ************************************************************
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -46,19 +68,15 @@ android {
         generateLocaleConfig = true
     }
 
-    // ********** APK နာမည်ပြောင်းရန် ကုဒ်အသစ် **********
-    // ဒီနေရာမှာ NekoBox ဆိုတဲ့ နာမည်ပါရင် LionBox နဲ့ အတင်းအစားထိုးခိုင်းထားပါတယ်
     applicationVariants.all {
         outputs.all {
             val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
             output.outputFileName = output.outputFileName.replace("NekoBox", "LionBox")
         }
     }
-    // **************************************************
 }
 
 dependencies {
-
     implementation(fileTree("libs"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
