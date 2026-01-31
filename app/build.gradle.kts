@@ -16,8 +16,8 @@ android {
     // ********** App ID ပြောင်းပြီးသား **********
     defaultConfig {
         applicationId = "com.lionbox.vpn"
-        versionName = "2.2"
-        versionCode = 2
+        versionName = "3.0"
+        versionCode = 3
     }
 
     compileOptions {
