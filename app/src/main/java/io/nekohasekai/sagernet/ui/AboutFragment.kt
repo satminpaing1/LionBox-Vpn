@@ -51,15 +51,10 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
             .commitAllowingStateLoss()
 
         runOnDefaultDispatcher {
-            // License ဖိုင်မရှိရင် Error တက်နိုင်လို့ try-catch ခံထားတာ ကောင်းပါတယ်
-            try {
-                val license = view.context.assets.open("LICENSE").bufferedReader().readText()
-                onMainDispatcher {
-                    binding.license.text = license
-                    Linkify.addLinks(binding.license, Linkify.EMAIL_ADDRESSES or Linkify.WEB_URLS)
-                }
-            } catch (e: Exception) {
-                // License file not found
+            val license = view.context.assets.open("LICENSE").bufferedReader().readText()
+            onMainDispatcher {
+                binding.license.text = license
+                Linkify.addLinks(binding.license, Linkify.EMAIL_ADDRESSES or Linkify.WEB_URLS)
             }
         }
     }
@@ -87,9 +82,8 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                                 .text(R.string.app_version)
                                 .subText(SagerNet.appVersionNameForDisplay)
                                 .setOnClickAction {
-                                    // *** ပြင်ဆင်ချက် ၁: Version နှိပ်ရင်သွားမည့် Link ***
                                     requireContext().launchCustomTab(
-                                        "https://github.com/satminpaing1/LionBox-Vpn/releases"
+                                        "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases"
                                     )
                                 }
                                 .build())
@@ -120,9 +114,8 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                                 .text(R.string.donate)
                                 .subText(R.string.donate_info)
                                 .setOnClickAction {
-                                    // *** ပြင်ဆင်ချက် ၂: Donate Link (မရှိရင် GitHub ပဲ ထားလိုက်ပါ) ***
                                     requireContext().launchCustomTab(
-                                        "https://github.com/satminpaing1/LionBox-Vpn"
+                                        "https://matsuridayo.github.io/index_docs/#donate"
                                     )
                                 }
                                 .build())
@@ -187,20 +180,19 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                         .addItem(
                             MaterialAboutActionItem.Builder()
                                 .icon(R.drawable.ic_baseline_sanitizer_24)
-                                .text(R.string.github) // Source Code
+                                .text(R.string.github)
                                 .setOnClickAction {
-                                    // *** ပြင်ဆင်ချက် ၃: Source Code Link ***
                                     requireContext().launchCustomTab(
                                         "https://github.com/satminpaing1/LionBox-Vpn"
+
                                     )
                                 }
                                 .build())
                         .addItem(
                             MaterialAboutActionItem.Builder()
                                 .icon(R.drawable.ic_qu_shadowsocks_foreground)
-                                .text(R.string.telegram) // Telegram Channel
+                                .text(R.string.telegram)
                                 .setOnClickAction {
-                                    // *** ပြင်ဆင်ချက် ၄: Telegram Channel Link ***
                                     requireContext().launchCustomTab(
                                         "https://t.me/kingpaing007"
                                     )
@@ -228,11 +220,9 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                     }
                     val response = client.newRequest().apply {
                         if (checkPreview) {
-                            // *** ပြင်ဆင်ချက် ၅: Update စစ်မည့် API (Preview) ***
-                            setURL("https://api.github.com/repos/satminpaing1/LionBox-Vpn/releases/tags/preview")
+                            setURL("https://api.github.com/repos/MatsuriDayo/NekoBoxForAndroid/releases/tags/preview")
                         } else {
-                            // *** ပြင်ဆင်ချက် ၆: Update စစ်မည့် API (Latest) ***
-                            setURL("https://api.github.com/repos/satminpaing1/LionBox-Vpn/releases/latest")
+                            setURL("https://api.github.com/repos/MatsuriDayo/NekoBoxForAndroid/releases/latest")
                         }
                     }.execute()
                     val release = JSONObject(Util.getStringBox(response.contentString))
@@ -243,9 +233,14 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                         if (checkPreview) {
                             haveUpdate && releaseName != BuildConfig.PRE_VERSION_NAME
                         } else {
+                            // User: 1.3.9 pre-1.4.0 Stable: 1.3.9 -> No update
                             haveUpdate && releaseName != BuildConfig.VERSION_NAME
                         }
                     } else {
+                        // User: 1.4.0 Preview: pre-1.4.0 -> No update
+                        // User: 1.4.0 Preview: pre-1.4.1 -> Update
+                        // User: 1.4.0 Stable: 1.4.0 -> No update
+                        // User: 1.4.0 Stable: 1.4.1 -> Update
                         haveUpdate && !releaseName.contains(BuildConfig.VERSION_NAME)
                     }
                     runOnMainDispatcher {
