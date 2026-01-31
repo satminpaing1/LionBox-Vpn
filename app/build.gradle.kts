@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId = "com.lionbox.vpn"
         versionName = "2.2"
-        versionCode = 2.2
+        versionCode = 2
     }
 
     compileOptions {
