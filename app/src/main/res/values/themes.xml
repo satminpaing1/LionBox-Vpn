@@ -481,4 +481,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.SagerNet.NeonWhite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/neon_red</item>
+        <item name="colorPrimaryDark">@color/neon_bg_white</item>
+        <item name="colorAccent">@color/neon_purple</item>
+        
+        <item name="android:windowBackground">@color/neon_bg_white</item>
+        <item name="android:colorBackground">@color/neon_bg_white</item>
+        
+        <item name="android:textColorPrimary">@color/neon_text</item>
+        <item name="android:textColorSecondary">@color/neon_purple</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/neon_bg_white</item>
+        
+        <item name="colorMaterial100">@color/neon_green</item>
+        <item name="colorMaterial300">@color/neon_purple</item>
+    </style>
+
 </resources>
