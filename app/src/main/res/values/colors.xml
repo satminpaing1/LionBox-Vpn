@@ -308,4 +308,15 @@
 
     <color name="preference_simple_menu_background">#FAFAFA</color>
 
+    <color name="color_ng_black_accent">#9E9E9E</color>
+    <color name="color_ng_black_primary">#2B2B2B</color>
+
+    <color name="preference_simple_menu_background">#FAFAFA</color>
+
+    <color name="neon_bg_white">#FFFFFF</color>  
+    <color name="neon_red">#FF1744</color>        
+    <color name="neon_green">#00E676</color>     
+    <color name="neon_purple">#D500F9</color>    
+    <color name="neon_text">#212121</color>       
+
 </resources>
