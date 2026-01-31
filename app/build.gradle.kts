@@ -19,10 +19,10 @@ android {
         versionCode = 3
     }
 
-    // ********** ဒီနေရာမှာ Signing Config ကို ထည့်ထားပါတယ် **********
+    // ********** Signing Config **********
     signingConfigs {
         create("release") {
-            storeFile = file("lionbox.jks") // app folder ထဲက jks ဖိုင်ကို ယူမယ်
+            storeFile = file("lionbox.jks")
             storePassword = "Paing@007"
             keyAlias = "lionbox-key"
             keyPassword = "Paing@007"
@@ -31,16 +31,20 @@ android {
 
     buildTypes {
         getByName("debug") {
-            // Debug build မှာလည်း ဒီ Key ကိုပဲ သုံးခိုင်းလိုက်တာဖြစ်ပါတယ်
             signingConfig = signingConfigs.getByName("release")
+            // Error ဖြေရှင်းချက်: Minify ပိတ်ရင် Resource Shrink ပါ ပိတ်ရမယ်
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
         getByName("release") {
             signingConfig = signingConfigs.getByName("release")
+            // Error ဖြေရှင်းချက်: Minify ပိတ်ရင် Resource Shrink ပါ ပိတ်ရမယ်
             isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    // ************************************************************
+    // ************************************
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
