@@ -133,6 +133,14 @@ object DataStore : OnPreferenceDataStoreChangeListener {
         if (configurationStore.getString(Key.MIXED_PORT) == null) {
             mixedPort = mixedPort
         }
+
+        // ********** FORCE THEME (အတင်းပြောင်းခိုင်းတဲ့ ကုဒ်) **********
+        // App စဖွင့်တာနဲ့ Database မှာ ဘာရေးထားထား NeonWhite ကိုပဲ ယူသုံးမယ်
+        appTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite
+        
+        // ဖုန်းက Dark Mode ဖွင့်ထားရင်လည်း NeonWhite ကိုပဲ သုံးမယ်
+        nightTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite
+        // ********************************************************
     }
 
 
