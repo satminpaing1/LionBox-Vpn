@@ -9,7 +9,7 @@
         <item name="colorMaterial300">@color/neon_blue</item>
 
         <item name="android:windowBackground">@color/modern_bg</item>
-        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@color/modern_bg</item>
 
         <item name="android:textColorPrimary">@color/neon_text_dark</item>
         <item name="android:textColorSecondary">@color/neon_purple</item>
