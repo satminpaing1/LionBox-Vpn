@@ -96,7 +96,8 @@ object DataStore : OnPreferenceDataStoreChangeListener {
 
     var isExpert by configurationStore.boolean(Key.APP_EXPERT)
     // Default Theme ကိုပဲ တိုက်ရိုက်ညွှန်းပါ (themes.xml မှာ ဒါကို Neon လုပ်ထားပြီးသားပါ)
-    var appTheme by configurationStore.int(Key.APP_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet }
+    // Theme_SagerNet_NeonWhite ကို ယူသုံးပါလို့ အမိန့်ပေးတာပါ
+    var appTheme by configurationStore.int(Key.APP_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite }
     var nightTheme by configurationStore.stringToInt(Key.NIGHT_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet }
     var serviceMode by configurationStore.string(Key.SERVICE_MODE) { Key.MODE_VPN }
 
