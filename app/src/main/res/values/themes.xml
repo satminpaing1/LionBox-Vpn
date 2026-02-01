@@ -97,8 +97,15 @@
     </style>
 
     <style name="Widget.MaterialComponents.Chip.Choice.SagerNet">
-        <item name="chipBackgroundColor">@color/modern_chip_background</item> <item name="android:textColor">@color/modern_chip_text_color</item> <item name="checkedIconTint">@color/neon_red</item>
-        <item name="rippleColor">@color/modern_chip_ripple_color</item> </style>
+        <item name="textStartPadding">30dp</item>
+        <item name="textEndPadding">30dp</item>
+        
+        <item name="chipBackgroundColor">@color/modern_chip_background</item>
+        <item name="android:textColor">@color/modern_chip_text_color</item>
+        <item name="rippleColor">@color/modern_chip_ripple_color</item>
+        
+        <item name="checkedIconTint">@color/neon_red</item>
+    </style>
 
     <style name="Theme.Start" parent="Theme.MaterialComponents.DayNight">
         <item name="android:navigationBarColor">@android:color/transparent</item>
@@ -125,5 +132,27 @@
 
     <style name="Theme.SagerNet.Dialog.Black"><item name="colorPrimary">@color/neon_text_dark</item></style>
     <style name="Theme.SagerNet.Black"><item name="colorPrimary">@color/neon_text_dark</item><item name="android:windowBackground">@drawable/bg_soft_mix</item></style>
+
+    <style name="Theme.SagerNet.NeonWhite" parent="Theme.SagerNet" />
+    
+    <style name="Theme.SagerNet.Dialog.Red" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Pink_SSR" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Purple" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.DeepPurple" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Indigo" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Blue" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.LightBlue" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Cyan" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Teal" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Green" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.LightGreen" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Lime" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Yellow" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Amber" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Orange" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.DeepOrange" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Brown" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.Grey" parent="Theme.SagerNet.Dialog" />
+    <style name="Theme.SagerNet.Dialog.BlueGrey" parent="Theme.SagerNet.Dialog" />
 
 </resources>
