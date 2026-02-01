@@ -9,6 +9,7 @@ import io.nekohasekai.sagernet.ktx.app
 
 object Theme {
 
+    // Constants (Error မတက်အောင် ဒီအတိုင်း ထားလိုက်ပါ)
     const val RED = 1
     const val PINK_SSR = 2
     const val PINK = 3
@@ -49,59 +50,18 @@ object Theme {
         return getDialogTheme(DataStore.appTheme)
     }
 
+    // ********** ဒီနေရာမှာ ပြင်ထားပါတယ် **********
+    // ဘယ် Theme ID ပဲ လာလာ၊ themes.xml မှာ သတ်မှတ်ထားတဲ့ Main Theme ကိုပဲ ယူပါမယ်
+    // ဒါမှ Unresolved reference Error မတက်မှာပါ
     fun getTheme(theme: Int): Int {
-        return when (theme) {
-            RED -> R.style.Theme_SagerNet_Red
-            PINK -> R.style.Theme_SagerNet
-            PINK_SSR -> R.style.Theme_SagerNet_Pink_SSR
-            PURPLE -> R.style.Theme_SagerNet_Purple
-            DEEP_PURPLE -> R.style.Theme_SagerNet_DeepPurple
-            INDIGO -> R.style.Theme_SagerNet_Indigo
-            BLUE -> R.style.Theme_SagerNet_Blue
-            LIGHT_BLUE -> R.style.Theme_SagerNet_LightBlue
-            CYAN -> R.style.Theme_SagerNet_Cyan
-            TEAL -> R.style.Theme_SagerNet_Teal
-            GREEN -> R.style.Theme_SagerNet_Green
-            LIGHT_GREEN -> R.style.Theme_SagerNet_LightGreen
-            LIME -> R.style.Theme_SagerNet_Lime
-            YELLOW -> R.style.Theme_SagerNet_Yellow
-            AMBER -> R.style.Theme_SagerNet_Amber
-            ORANGE -> R.style.Theme_SagerNet_Orange
-            DEEP_ORANGE -> R.style.Theme_SagerNet_DeepOrange
-            BROWN -> R.style.Theme_SagerNet_Brown
-            GREY -> R.style.Theme_SagerNet_Grey
-            BLUE_GREY -> R.style.Theme_SagerNet_BlueGrey
-            BLACK -> R.style.Theme_SagerNet_Black
-            else -> getTheme(defaultTheme())
-        }
+        return R.style.Theme_SagerNet
     }
 
+    // Dialog အတွက်လည်း Main Dialog Theme ကိုပဲ ယူပါမယ်
     fun getDialogTheme(theme: Int): Int {
-        return when (theme) {
-            RED -> R.style.Theme_SagerNet_Dialog_Red
-            PINK -> R.style.Theme_SagerNet_Dialog
-            PINK_SSR -> R.style.Theme_SagerNet_Dialog_Pink_SSR
-            PURPLE -> R.style.Theme_SagerNet_Dialog_Purple
-            DEEP_PURPLE -> R.style.Theme_SagerNet_Dialog_DeepPurple
-            INDIGO -> R.style.Theme_SagerNet_Dialog_Indigo
-            BLUE -> R.style.Theme_SagerNet_Dialog_Blue
-            LIGHT_BLUE -> R.style.Theme_SagerNet_Dialog_LightBlue
-            CYAN -> R.style.Theme_SagerNet_Dialog_Cyan
-            TEAL -> R.style.Theme_SagerNet_Dialog_Teal
-            GREEN -> R.style.Theme_SagerNet_Dialog_Green
-            LIGHT_GREEN -> R.style.Theme_SagerNet_Dialog_LightGreen
-            LIME -> R.style.Theme_SagerNet_Dialog_Lime
-            YELLOW -> R.style.Theme_SagerNet_Dialog_Yellow
-            AMBER -> R.style.Theme_SagerNet_Dialog_Amber
-            ORANGE -> R.style.Theme_SagerNet_Dialog_Orange
-            DEEP_ORANGE -> R.style.Theme_SagerNet_Dialog_DeepOrange
-            BROWN -> R.style.Theme_SagerNet_Dialog_Brown
-            GREY -> R.style.Theme_SagerNet_Dialog_Grey
-            BLUE_GREY -> R.style.Theme_SagerNet_Dialog_BlueGrey
-            BLACK -> R.style.Theme_SagerNet_Dialog_Black
-            else -> getDialogTheme(defaultTheme())
-        }
+        return R.style.Theme_SagerNet_Dialog
     }
+    // *******************************************
 
     var currentNightMode = -1
     fun getNightMode(): Int {
@@ -131,5 +91,4 @@ object Theme {
     fun applyNightTheme() {
         AppCompatDelegate.setDefaultNightMode(getNightMode())
     }
-
 }
