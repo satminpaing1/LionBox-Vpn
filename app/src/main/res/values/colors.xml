@@ -298,15 +298,18 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="fab_color_progress">@color/material_light_black</color>
-
     <color name="color_pink_ssr">@color/neon_red</color>
-
     <color name="color_ng_black_accent">#9E9E9E</color>
     <color name="color_ng_black_primary">#2B2B2B</color>
-
     <color name="preference_simple_menu_background">#FAFAFA</color>
+
+    <color name="modern_bg">#F5F6FA</color>
+    <color name="modern_surface">#FFFFFF</color>
+    <color name="modern_text_primary">#212121</color>
+    <color name="modern_text_secondary">#757575</color>
+    <color name="modern_blue">#2979FF</color>
+    <color name="modern_purple">#D500F9</color>
 
     <color name="neon_red">#FF1744</color>
     <color name="neon_green">#00E676</color>
@@ -321,9 +324,7 @@
     <color name="soft_green">#E8F5E9</color>
     
     <color name="modern_chip_background">#F5F5F5</color>
-    
     <color name="modern_chip_text_color">#212121</color>
-    
     <color name="modern_chip_ripple_color">@color/neon_red</color>
 
 </resources>
