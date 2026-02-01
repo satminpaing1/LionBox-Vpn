@@ -321,7 +321,9 @@
     <color name="soft_green">#E8F5E9</color>
     
     <color name="modern_chip_background">#F5F5F5</color>
+    
     <color name="modern_chip_text_color">#212121</color>
+    
     <color name="modern_chip_ripple_color">@color/neon_red</color>
 
 </resources>
