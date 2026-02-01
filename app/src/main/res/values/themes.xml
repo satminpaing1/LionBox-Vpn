@@ -8,7 +8,7 @@
         <item name="colorMaterial100">@color/neon_green</item>
         <item name="colorMaterial300">@color/neon_blue</item>
 
-        <item name="android:windowBackground">@drawable/bg_soft_mix</item>
+        <item name="android:windowBackground">@color/modern_bg</item>
         <item name="android:colorBackground">@android:color/transparent</item>
 
         <item name="android:textColorPrimary">@color/neon_text_dark</item>
