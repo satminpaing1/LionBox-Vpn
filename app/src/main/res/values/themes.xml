@@ -2,39 +2,39 @@
     <style name="Theme.SagerNet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Solid</item>
         <item name="actionModeCloseDrawable">@drawable/ic_navigation_close</item>
-        
-        <item name="colorPrimary">@color/neon_red</item>
-        <item name="colorPrimaryDark">@color/neon_bg_white</item>
-        <item name="colorAccent">@color/neon_purple</item>
 
-        <item name="colorMaterial100">@color/neon_green</item>
-        <item name="colorMaterial300">@color/neon_purple</item>
+        <item name="colorPrimary">@color/modern_surface</item>
+        <item name="colorPrimaryDark">@color/modern_bg</item>
+        <item name="colorAccent">@color/modern_blue</item>
 
-        <item name="android:windowBackground">@color/neon_bg_white</item>
-        <item name="android:colorBackground">@color/neon_bg_white</item>
+        <item name="colorMaterial100">@color/modern_bg</item>
+        <item name="colorMaterial300">@color/modern_blue</item>
 
-        <item name="android:textColorPrimary">@color/neon_text</item>
-        <item name="android:textColorSecondary">@color/neon_purple</item>
+        <item name="android:windowBackground">@color/modern_bg</item>
+        <item name="android:colorBackground">@color/modern_bg</item>
+
+        <item name="android:textColorPrimary">@color/modern_text_primary</item>
+        <item name="android:textColorSecondary">@color/modern_text_secondary</item>
 
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@color/neon_bg_white</item>
-        <item name="colorButtonNormal">?colorAccent</item>
-        <item name="android:navigationBarColor">?colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/modern_bg</item>
+        <item name="colorButtonNormal">@color/modern_blue</item>
+        <item name="android:navigationBarColor">@color/modern_bg</item>
 
-        <item name="accentOrTextSecondary">?colorAccent</item>
-        <item name="accentOrTextPrimary">?colorAccent</item>
-        <item name="primaryOrTextSecondary">?colorPrimary</item>
-        <item name="primaryOrTextPrimary">?colorPrimary</item>
+        <item name="accentOrTextSecondary">@color/modern_blue</item>
+        <item name="accentOrTextPrimary">@color/modern_blue</item>
+        <item name="primaryOrTextSecondary">@color/modern_text_primary</item>
+        <item name="primaryOrTextPrimary">@color/modern_text_primary</item>
 
-        <item name="fabColorBackground">?colorPrimary</item>
-        <item name="selectedColorPrimary">?colorPrimary</item>
+        <item name="fabColorBackground">@color/modern_blue</item>
+        <item name="selectedColorPrimary">@color/modern_blue</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         
-        <item name="tabTextColor">@color/neon_purple</item>
-        <item name="tabSelectedTextColor">@color/neon_text</item>
-        <item name="tabIndicatorColor">@color/neon_red</item>
-        <item name="tabRippleColor">@color/neon_green</item>
-        <item name="whiteOrTextPrimary">@color/neon_text</item>
+        <item name="tabTextColor">@color/modern_text_secondary</item>
+        <item name="tabSelectedTextColor">@color/modern_blue</item>
+        <item name="tabIndicatorColor">@color/modern_blue</item>
+        <item name="tabRippleColor">@color/modern_purple</item>
+        <item name="whiteOrTextPrimary">@color/modern_text_primary</item>
 
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
@@ -49,48 +49,42 @@
     <style name="Theme.SagerNet.Dialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
         <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Solid</item>
         <item name="actionModeCloseDrawable">@drawable/ic_navigation_close</item>
-        <item name="colorButtonNormal">?colorAccent</item>
-        <item name="android:navigationBarColor">?colorPrimaryDark</item>
+        <item name="colorButtonNormal">@color/modern_blue</item>
+        <item name="android:navigationBarColor">@color/modern_bg</item>
         
-        <item name="colorPrimary">@color/neon_red</item>
-        <item name="colorPrimaryDark">@color/neon_bg_white</item>
-        <item name="colorAccent">@color/neon_purple</item>
+        <item name="colorPrimary">@color/modern_surface</item>
+        <item name="colorPrimaryDark">@color/modern_bg</item>
+        <item name="colorAccent">@color/modern_blue</item>
 
-        <item name="colorMaterial100">@color/neon_green</item>
-        <item name="colorMaterial300">@color/neon_purple</item>
+        <item name="colorMaterial100">@color/modern_bg</item>
+        <item name="colorMaterial300">@color/modern_blue</item>
 
-        <item name="accentOrTextSecondary">?colorAccent</item>
-        <item name="accentOrTextPrimary">?colorAccent</item>
-        <item name="primaryOrTextSecondary">?colorPrimary</item>
-        <item name="primaryOrTextPrimary">?colorPrimary</item>
+        <item name="accentOrTextSecondary">@color/modern_blue</item>
+        <item name="accentOrTextPrimary">@color/modern_blue</item>
+        <item name="primaryOrTextSecondary">@color/modern_text_primary</item>
+        <item name="primaryOrTextPrimary">@color/modern_text_primary</item>
 
-        <item name="fabColorBackground">?colorPrimary</item>
-        <item name="selectedColorPrimary">?colorPrimary</item>
+        <item name="fabColorBackground">@color/modern_blue</item>
+        <item name="selectedColorPrimary">@color/modern_blue</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-        <item name="tabTextColor">#99FFFFFF</item>
-        <item name="tabSelectedTextColor">@color/white</item>
-        <item name="tabIndicatorColor">@color/white</item>
-        <item name="tabRippleColor">@color/white</item>
-        <item name="whiteOrTextPrimary">@color/white</item>
+        <item name="tabTextColor">@color/modern_text_secondary</item>
+        <item name="tabSelectedTextColor">@color/modern_blue</item>
+        <item name="tabIndicatorColor">@color/modern_blue</item>
+        <item name="tabRippleColor">@color/modern_purple</item>
+        <item name="whiteOrTextPrimary">@color/modern_text_primary</item>
 
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
         <item name="chipStyle">@style/Widget.MaterialComponents.Chip.Choice.SagerNet</item>
-        <item name="itemShapeAppearance">
-            @style/ShapeAppearance.MaterialComponents.MediumComponent
-        </item>
-
-        <item name="alertDialogTheme">
-            @style/ThemeOverlay.MaterialComponents.MaterialAlertDialog.SagerNet
-        </item>
-
-        <item name="materialAlertDialogTheme">
-            @style/ThemeOverlay.MaterialComponents.MaterialAlertDialog.SagerNet
-        </item>
-
+        <item name="itemShapeAppearance">@style/ShapeAppearance.MaterialComponents.MediumComponent</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog.SagerNet</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog.SagerNet</item>
         <item name="windowFixedHeightMajor" type="dimen">95%</item>
+        
+        <item name="android:windowBackground">@color/modern_surface</item>
+        <item name="android:colorBackground">@color/modern_surface</item>
     </style>
 
     <style name="AppearanceFoundation.Title" parent="TextAppearance.AppCompat.Title">
@@ -99,23 +93,18 @@
     </style>
 
     <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog.SagerNet">
-        <item name="buttonBarPositiveButtonStyle">
-            @style/Widget.MaterialComponents.Button.TextButton.Dialog.Primary
-        </item>
-        <item name="buttonBarNegativeButtonStyle">
-            @style/Widget.MaterialComponents.Button.TextButton.Dialog.Primary
-        </item>
-        <item name="buttonBarNeutralButtonStyle">
-            @style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush.Primary
-        </item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog.Primary</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog.Primary</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush.Primary</item>
+        <item name="android:textColorPrimary">@color/modern_text_primary</item>
     </style>
 
     <style name="Widget.MaterialComponents.Button.TextButton.Dialog.Primary">
-        <item name="android:textColor">?primaryOrTextPrimary</item>
+        <item name="android:textColor">@color/modern_blue</item>
     </style>
 
     <style name="Widget.MaterialComponents.Button.TextButton.Dialog.Flush.Primary">
-        <item name="android:textColor">?primaryOrTextPrimary</item>
+        <item name="android:textColor">@color/modern_blue</item>
     </style>
 
     <style name="Widget.MaterialComponents.Chip.Choice.SagerNet">
@@ -123,21 +112,23 @@
         <item name="textEndPadding">30dp</item>
         <item name="chipBackgroundColor">@color/chip_background</item>
         <item name="android:textColor">@color/chip_text_color</item>
-        <item name="checkedIconTint">?primaryOrTextPrimary</item>
+        <item name="checkedIconTint">@color/modern_blue</item>
         <item name="rippleColor">@color/chip_ripple_color</item>
     </style>
 
     <style name="Theme.SagerNet.Pink_SSR">
-        <item name="colorPrimary">@color/neon_red</item>
-        <item name="colorPrimaryDark">@color/neon_bg_white</item>
-        <item name="colorAccent">@color/neon_purple</item>
-        <item name="colorMaterial100">@color/neon_green</item>
-        <item name="colorMaterial300">@color/neon_purple</item>
+        <item name="colorPrimary">@color/modern_surface</item>
+        <item name="colorPrimaryDark">@color/modern_bg</item>
+        <item name="colorAccent">@color/modern_blue</item>
+        <item name="colorMaterial100">@color/modern_bg</item>
+        <item name="colorMaterial300">@color/modern_blue</item>
         
-        <item name="android:windowBackground">@color/neon_bg_white</item>
-        <item name="android:colorBackground">@color/neon_bg_white</item>
+        <item name="android:windowBackground">@color/modern_bg</item>
+        <item name="android:colorBackground">@color/modern_bg</item>
+        <item name="android:textColorPrimary">@color/modern_text_primary</item>
+        <item name="android:textColorSecondary">@color/modern_text_secondary</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@color/neon_bg_white</item>
+        <item name="android:statusBarColor">@color/modern_bg</item>
     </style>
 
     <style name="Theme.SagerNet.Amber">
