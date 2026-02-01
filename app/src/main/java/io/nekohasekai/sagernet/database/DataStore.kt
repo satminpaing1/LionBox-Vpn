@@ -95,8 +95,9 @@ object DataStore : OnPreferenceDataStoreChangeListener {
     //
 
     var isExpert by configurationStore.boolean(Key.APP_EXPERT)
-    var appTheme by configurationStore.int(Key.APP_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite }
-    var nightTheme by configurationStore.stringToInt(Key.NIGHT_THEME)
+    // Default Theme ကိုပဲ တိုက်ရိုက်ညွှန်းပါ (themes.xml မှာ ဒါကို Neon လုပ်ထားပြီးသားပါ)
+    var appTheme by configurationStore.int(Key.APP_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet }
+    var nightTheme by configurationStore.stringToInt(Key.NIGHT_THEME) { io.nekohasekai.sagernet.R.style.Theme_SagerNet }
     var serviceMode by configurationStore.string(Key.SERVICE_MODE) { Key.MODE_VPN }
 
     var trafficSniffing by configurationStore.stringToInt(Key.TRAFFIC_SNIFFING) { 1 }
@@ -133,14 +134,9 @@ object DataStore : OnPreferenceDataStoreChangeListener {
         if (configurationStore.getString(Key.MIXED_PORT) == null) {
             mixedPort = mixedPort
         }
-
-        // ********** FORCE THEME (အတင်းပြောင်းခိုင်းတဲ့ ကုဒ်) **********
-        // App စဖွင့်တာနဲ့ Database မှာ ဘာရေးထားထား NeonWhite ကိုပဲ ယူသုံးမယ်
-        appTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite
-        
-        // ဖုန်းက Dark Mode ဖွင့်ထားရင်လည်း NeonWhite ကိုပဲ သုံးမယ်
-        nightTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet_NeonWhite
-        // ********************************************************
+        // Force Update Theme
+        appTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet
+        nightTheme = io.nekohasekai.sagernet.R.style.Theme_SagerNet
     }
 
 
