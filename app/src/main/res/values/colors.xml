@@ -308,6 +308,16 @@
 
     <color name="preference_simple_menu_background">#FAFAFA</color>
 
+    <color name="modern_bg">#F5F6FA</color>
+    
+    <color name="modern_surface">#FFFFFF</color>
+    
+    <color name="modern_blue">#2979FF</color>
+    <color name="modern_purple">#D500F9</color>
+    
+    <color name="modern_text_primary">#212121</color>
+    <color name="modern_text_secondary">#757575</color>
+    
     <color name="neon_bg_white">#FFFFFF</color>
     <color name="neon_red">#FF1744</color>
     <color name="neon_green">#00E676</color>
