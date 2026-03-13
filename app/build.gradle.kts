@@ -15,8 +15,8 @@ android {
 
     defaultConfig {
         applicationId = "com.lionbox.vpn"
-        versionName = "3.7"
-        versionCode = 10
+        versionName = "3.8"
+        versionCode = 11
     }
 
     // ********** Signing Config **********
